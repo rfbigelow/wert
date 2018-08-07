@@ -13,6 +13,7 @@
 		7DF95A0A211946EF00BF28B1 /* hitable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF95A09211946EF00BF28B1 /* hitable.swift */; };
 		7DF95A0C2119487200BF28B1 /* sphere.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF95A0B2119487200BF28B1 /* sphere.swift */; };
 		7DF95A0E21194D1900BF28B1 /* hitablelist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF95A0D21194D1900BF28B1 /* hitablelist.swift */; };
+		7DF95A1021197B4900BF28B1 /* camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF95A0F21197B4900BF28B1 /* camera.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,6 +36,7 @@
 		7DF95A09211946EF00BF28B1 /* hitable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hitable.swift; sourceTree = "<group>"; };
 		7DF95A0B2119487200BF28B1 /* sphere.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sphere.swift; sourceTree = "<group>"; };
 		7DF95A0D21194D1900BF28B1 /* hitablelist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hitablelist.swift; sourceTree = "<group>"; };
+		7DF95A0F21197B4900BF28B1 /* camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = camera.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				7D39DFD6209DF49D0038FA64 /* main.swift */,
+				7DF95A0F21197B4900BF28B1 /* camera.swift */,
 				7DF95A09211946EF00BF28B1 /* hitable.swift */,
 				7DF95A0B2119487200BF28B1 /* sphere.swift */,
 				7DBF31D52117824300F7EBA5 /* vec3.swift */,
@@ -140,6 +143,7 @@
 				7DF95A0A211946EF00BF28B1 /* hitable.swift in Sources */,
 				7DBF31D8211932B800F7EBA5 /* ray.swift in Sources */,
 				7D39DFD7209DF49D0038FA64 /* main.swift in Sources */,
+				7DF95A1021197B4900BF28B1 /* camera.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

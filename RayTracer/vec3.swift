@@ -52,10 +52,10 @@ struct vec3 {
     }
 
     static func *= (left: inout vec3, c: Float) {
-        left.e[0] *= c; left.e[1] *= c; left.e[2] *= 3
+        left.e[0] *= c; left.e[1] *= c; left.e[2] *= c
     }
     static func /= (left: inout vec3, c: Float) {
-        left.e[0] /= c; left.e[1] /= c; left.e[2] /= 3
+        left.e[0] /= c; left.e[1] /= c; left.e[2] /= c
     }
     
     static func + (left: vec3, right: vec3) -> vec3 {
