@@ -6,21 +6,28 @@
 //  Copyright © 2018 Robert Bigelow. All rights reserved.
 //
 
-func hit_sphere(_ center: vec3, _ radius: Float, _ r: ray) -> Bool {
+func hit_sphere(_ center: vec3, _ radius: Float, _ r: ray) -> Float {
     let oc = r.origin - center
     let a = dot(r.direction, r.direction)
     let b = 2.0 * dot(oc, r.direction)
     let c = dot(oc, oc) - radius*radius
     let discriminant = b*b - 4*a*c
-    return discriminant > 0
+    if discriminant < 0 {
+        return -1.0
+    }
+    else {
+        return (-b - discriminant.squareRoot()) / (2.0*a)
+    }
 }
 
 func color(_ r: ray) -> vec3 {
-    if hit_sphere(vec3(0.0, 0.0, -1.0), 0.5, r) {
-        return vec3(1.0, 0.0, 0.0)
+    var t = hit_sphere(vec3(0.0, 0.0, -1.0), 0.5, r)
+    if t > 0.0 {
+        let N = unit_vector(v: r.pointAtParameter(t) - vec3(0.0, 0.0, -1.0))
+        return 0.5*vec3(N.x + 1.0, N.y + 1.0, N.z + 1.0)
     }
     let unit_direction = unit_vector(v: r.direction)
-    let t = 0.5*(unit_direction.y + 1.0)
+    t = 0.5*(unit_direction.y + 1.0)
     return (1.0-t)*vec3(1.0, 1.0, 1.0) + t*vec3(0.5, 0.7, 1.0)
 }
 
