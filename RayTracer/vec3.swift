@@ -6,8 +6,6 @@
 //  Copyright © 2018 Robert Bigelow. All rights reserved.
 //
 
-import Foundation
-
 struct vec3 {
     init(_ e0: Float, _ e1:Float, _ e2:Float){
         e[0] = e0
@@ -79,7 +77,7 @@ struct vec3 {
         return vec3(left.e[0] / c, left.e[1] / c, left.e[2] / c)
     }
     
-    var length : Float { return sqrt(e[0] * e[0] + e[1] * e[1] + e[2] * e[2]) }
+    var length : Float { return (e[0] * e[0] + e[1] * e[1] + e[2] * e[2]).squareRoot() }
     var squared_length : Float { return e[0] * e[0] + e[1] * e[1] + e[2] * e[2] }
     mutating func make_unit_vector () {
         let k = 1.0 / length
@@ -91,4 +89,20 @@ struct vec3 {
 
 func unit_vector(v: vec3) -> vec3 {
     return v / v.length
+}
+
+func dot(_ v1: vec3, _ v2: vec3) -> Float {
+    return v1.e[0] * v2.e[0] + v1.e[1] * v2.e[1] + v1.e[2] * v2.e[2]
+}
+
+func cross(_ v1: vec3, _ v2: vec3) -> vec3 {
+    return vec3(v1.e[1]*v2.e[2] - v1.e[2]*v2.e[1],
+                -(v1.e[0]*v2.e[2] - v1.e[2]*v2.e[0]),
+                v1.e[0]*v2.e[1] - v1.e[1]*v2.e[0])
+}
+
+extension Float {
+    static func * (left: Float, right: vec3) -> vec3 {
+        return right * left
+    }
 }

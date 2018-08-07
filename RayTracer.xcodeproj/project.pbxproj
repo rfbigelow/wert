@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7D39DFD7209DF49D0038FA64 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D39DFD6209DF49D0038FA64 /* main.swift */; };
 		7DBF31D62117824300F7EBA5 /* vec3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBF31D52117824300F7EBA5 /* vec3.swift */; };
+		7DBF31D8211932B800F7EBA5 /* ray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBF31D7211932B800F7EBA5 /* ray.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,6 +28,7 @@
 		7D39DFD3209DF49D0038FA64 /* RayTracer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RayTracer; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D39DFD6209DF49D0038FA64 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		7DBF31D52117824300F7EBA5 /* vec3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vec3.swift; sourceTree = "<group>"; };
+		7DBF31D7211932B800F7EBA5 /* ray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ray.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			children = (
 				7D39DFD6209DF49D0038FA64 /* main.swift */,
 				7DBF31D52117824300F7EBA5 /* vec3.swift */,
+				7DBF31D7211932B800F7EBA5 /* ray.swift */,
 			);
 			path = RayTracer;
 			sourceTree = "<group>";
@@ -123,6 +126,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DBF31D62117824300F7EBA5 /* vec3.swift in Sources */,
+				7DBF31D8211932B800F7EBA5 /* ray.swift in Sources */,
 				7D39DFD7209DF49D0038FA64 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
