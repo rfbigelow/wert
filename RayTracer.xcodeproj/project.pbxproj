@@ -10,6 +10,9 @@
 		7D39DFD7209DF49D0038FA64 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D39DFD6209DF49D0038FA64 /* main.swift */; };
 		7DBF31D62117824300F7EBA5 /* vec3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBF31D52117824300F7EBA5 /* vec3.swift */; };
 		7DBF31D8211932B800F7EBA5 /* ray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBF31D7211932B800F7EBA5 /* ray.swift */; };
+		7DF95A0A211946EF00BF28B1 /* hitable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF95A09211946EF00BF28B1 /* hitable.swift */; };
+		7DF95A0C2119487200BF28B1 /* sphere.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF95A0B2119487200BF28B1 /* sphere.swift */; };
+		7DF95A0E21194D1900BF28B1 /* hitablelist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF95A0D21194D1900BF28B1 /* hitablelist.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +32,9 @@
 		7D39DFD6209DF49D0038FA64 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		7DBF31D52117824300F7EBA5 /* vec3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vec3.swift; sourceTree = "<group>"; };
 		7DBF31D7211932B800F7EBA5 /* ray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ray.swift; sourceTree = "<group>"; };
+		7DF95A09211946EF00BF28B1 /* hitable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hitable.swift; sourceTree = "<group>"; };
+		7DF95A0B2119487200BF28B1 /* sphere.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sphere.swift; sourceTree = "<group>"; };
+		7DF95A0D21194D1900BF28B1 /* hitablelist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hitablelist.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +68,10 @@
 			isa = PBXGroup;
 			children = (
 				7D39DFD6209DF49D0038FA64 /* main.swift */,
+				7DF95A09211946EF00BF28B1 /* hitable.swift */,
+				7DF95A0B2119487200BF28B1 /* sphere.swift */,
 				7DBF31D52117824300F7EBA5 /* vec3.swift */,
+				7DF95A0D21194D1900BF28B1 /* hitablelist.swift */,
 				7DBF31D7211932B800F7EBA5 /* ray.swift */,
 			);
 			path = RayTracer;
@@ -126,6 +135,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DBF31D62117824300F7EBA5 /* vec3.swift in Sources */,
+				7DF95A0E21194D1900BF28B1 /* hitablelist.swift in Sources */,
+				7DF95A0C2119487200BF28B1 /* sphere.swift in Sources */,
+				7DF95A0A211946EF00BF28B1 /* hitable.swift in Sources */,
 				7DBF31D8211932B800F7EBA5 /* ray.swift in Sources */,
 				7D39DFD7209DF49D0038FA64 /* main.swift in Sources */,
 			);

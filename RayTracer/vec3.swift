@@ -7,6 +7,7 @@
 //
 
 struct vec3 {
+    init() {}
     init(_ e0: Float, _ e1:Float, _ e2:Float){
         e[0] = e0
         e[1] = e1
