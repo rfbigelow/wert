@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		7D39DFD7209DF49D0038FA64 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D39DFD6209DF49D0038FA64 /* main.swift */; };
+		7D9126002128C305002F8420 /* material.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9125FF2128C305002F8420 /* material.swift */; };
+		7D9126022128C64F002F8420 /* lambertian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9126012128C64F002F8420 /* lambertian.swift */; };
+		7D9126042128C7E4002F8420 /* metal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9126032128C7E4002F8420 /* metal.swift */; };
 		7DBF31D62117824300F7EBA5 /* vec3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBF31D52117824300F7EBA5 /* vec3.swift */; };
 		7DBF31D8211932B800F7EBA5 /* ray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBF31D7211932B800F7EBA5 /* ray.swift */; };
 		7DF95A0A211946EF00BF28B1 /* hitable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF95A09211946EF00BF28B1 /* hitable.swift */; };
@@ -31,6 +34,9 @@
 /* Begin PBXFileReference section */
 		7D39DFD3209DF49D0038FA64 /* RayTracer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RayTracer; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D39DFD6209DF49D0038FA64 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		7D9125FF2128C305002F8420 /* material.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = material.swift; sourceTree = "<group>"; };
+		7D9126012128C64F002F8420 /* lambertian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lambertian.swift; sourceTree = "<group>"; };
+		7D9126032128C7E4002F8420 /* metal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = metal.swift; sourceTree = "<group>"; };
 		7DBF31D52117824300F7EBA5 /* vec3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vec3.swift; sourceTree = "<group>"; };
 		7DBF31D7211932B800F7EBA5 /* ray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ray.swift; sourceTree = "<group>"; };
 		7DF95A09211946EF00BF28B1 /* hitable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hitable.swift; sourceTree = "<group>"; };
@@ -72,6 +78,9 @@
 				7D39DFD6209DF49D0038FA64 /* main.swift */,
 				7DF95A0F21197B4900BF28B1 /* camera.swift */,
 				7DF95A09211946EF00BF28B1 /* hitable.swift */,
+				7D9126012128C64F002F8420 /* lambertian.swift */,
+				7D9126032128C7E4002F8420 /* metal.swift */,
+				7D9125FF2128C305002F8420 /* material.swift */,
 				7DF95A0B2119487200BF28B1 /* sphere.swift */,
 				7DBF31D52117824300F7EBA5 /* vec3.swift */,
 				7DF95A0D21194D1900BF28B1 /* hitablelist.swift */,
@@ -137,8 +146,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D9126002128C305002F8420 /* material.swift in Sources */,
+				7D9126042128C7E4002F8420 /* metal.swift in Sources */,
 				7DBF31D62117824300F7EBA5 /* vec3.swift in Sources */,
 				7DF95A0E21194D1900BF28B1 /* hitablelist.swift in Sources */,
+				7D9126022128C64F002F8420 /* lambertian.swift in Sources */,
 				7DF95A0C2119487200BF28B1 /* sphere.swift in Sources */,
 				7DF95A0A211946EF00BF28B1 /* hitable.swift in Sources */,
 				7DBF31D8211932B800F7EBA5 /* ray.swift in Sources */,
