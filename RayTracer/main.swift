@@ -16,11 +16,22 @@ func random_in_unit_sphere() -> vec3 {
     return p
 }
 
-func color(_ r: ray, _ world: hitable) -> vec3 {
+func color(_ r: ray, _ world: hitable, _ depth: Int) -> vec3 {
     var rec = hit_record()
     if world.hit(r, min: 0.001, max: Float.greatestFiniteMagnitude, &rec) {
-        let target = rec.p + rec.normal + random_in_unit_sphere()
-        return 0.5*color(ray(rec.p, target-rec.p), world)
+        if let mat = rec.mat {
+            var scattered: ray = ray()
+            var attenuation: vec3 = vec3()
+            if depth < 50 && mat.scatter(r, rec, attenuation: &attenuation, scattered: &scattered) {
+                return attenuation*color(scattered, world, depth+1)
+            }
+            else {
+                return vec3()
+            }
+        }
+        else {
+            return vec3()
+        }
     }
     else {
         let unit_direction = unit_vector(v: r.direction)
@@ -37,7 +48,10 @@ print("P3\n\(nx) \(ny)\n255");
 
 srand48(Date().hashValue)
 
-let world = [sphere(vec3(0.0, 0.0, -1.0), 0.5), sphere(vec3(0.0, -100.5, -1.0), 100)]
+let world = [sphere(vec3(0.0, 0.0, -1.0), 0.5, lambertian(vec3(0.8, 0.3, 0.3))),
+             sphere(vec3(0.0, -100.5, -1.0), 100, lambertian(vec3(0.8, 0.8, 0.0))),
+            sphere(vec3(1, 0, -1), 0.5, metal(vec3(0.8, 0.6, 0.2))),
+            sphere(vec3(-1, 0, -1), 0.5, metal(vec3(0.8, 0.8, 0.8)))]
 let cam = camera()
 
 for j in stride(from: ny-1, through: 0, by: -1) {
@@ -47,7 +61,7 @@ for j in stride(from: ny-1, through: 0, by: -1) {
             let u = (Float(i) + Float(drand48())) / Float(nx)
             let v = (Float(j) + Float(drand48())) / Float(ny)
             let r = cam.get_ray(u: u, v: v)
-            col += color(r, world)
+            col += color(r, world, 0)
         }
         col /= Float(ns)
         col = vec3(col[0].squareRoot(), col[1].squareRoot(), col[2].squareRoot())

@@ -7,6 +7,9 @@
 //
 
 struct ray {
+    init() {
+        self.init(vec3(), vec3())
+    }
     init(_ a: vec3, _ b: vec3) {
         A = a
         B = b

@@ -15,6 +15,7 @@ struct hit_record {
     var t: Float
     var p: vec3
     var normal: vec3
+    var mat: material?
 }
 
 protocol hitable {

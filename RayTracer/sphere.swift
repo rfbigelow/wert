@@ -7,9 +7,10 @@
 //
 
 struct sphere : hitable {
-    init(_ cen: vec3, _ r: Float) {
+    init(_ cen: vec3, _ r: Float, _ m: material) {
         center = cen
         radius = r
+        mat = m
     }
     func hit(_ r: ray, min: Float, max: Float, _ rec: inout hit_record) -> Bool {
         let oc = r.origin - center
@@ -23,6 +24,7 @@ struct sphere : hitable {
                 rec.t = temp
                 rec.p = r.pointAtParameter(rec.t)
                 rec.normal = (rec.p - center) / radius
+                rec.mat = mat
                 return true
             }
             temp = (-b + (b*b - a*c).squareRoot())/a
@@ -30,6 +32,7 @@ struct sphere : hitable {
                 rec.t = temp
                 rec.p = r.pointAtParameter(rec.t)
                 rec.normal = (rec.p - center) / radius
+                rec.mat = mat
                 return true
             }
         }
@@ -38,4 +41,5 @@ struct sphere : hitable {
     
     let center: vec3
     let radius: Float
+    let mat: material
 }
