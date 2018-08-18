@@ -18,7 +18,7 @@ func random_in_unit_sphere() -> vec3 {
 
 func color(_ r: ray, _ world: hitable) -> vec3 {
     var rec = hit_record()
-    if world.hit(r, min: 0.0, max: Float.greatestFiniteMagnitude, &rec) {
+    if world.hit(r, min: 0.001, max: Float.greatestFiniteMagnitude, &rec) {
         let target = rec.p + rec.normal + random_in_unit_sphere()
         return 0.5*color(ray(rec.p, target-rec.p), world)
     }
@@ -50,7 +50,7 @@ for j in stride(from: ny-1, through: 0, by: -1) {
             col += color(r, world)
         }
         col /= Float(ns)
-        
+        col = vec3(col[0].squareRoot(), col[1].squareRoot(), col[2].squareRoot())
         let ir = Int(255.99*col[0])
         let ig = Int(255.99*col[1])
         let ib = Int(255.99*col[2])
