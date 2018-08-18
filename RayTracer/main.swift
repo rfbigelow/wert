@@ -8,10 +8,19 @@
 
 import Foundation
 
+func random_in_unit_sphere() -> vec3 {
+    var p: vec3
+    repeat {
+        p = 2.0*vec3(Float(drand48()), Float(drand48()), Float(drand48())) - vec3(1, 1, 1)
+    } while p.squared_length >= 1.0
+    return p
+}
+
 func color(_ r: ray, _ world: hitable) -> vec3 {
     var rec = hit_record()
     if world.hit(r, min: 0.0, max: Float.greatestFiniteMagnitude, &rec) {
-        return 0.5*vec3(rec.normal.x + 1.0, rec.normal.y + 1.0, rec.normal.z + 1.0)
+        let target = rec.p + rec.normal + random_in_unit_sphere()
+        return 0.5*color(ray(rec.p, target-rec.p), world)
     }
     else {
         let unit_direction = unit_vector(v: r.direction)
@@ -41,6 +50,7 @@ for j in stride(from: ny-1, through: 0, by: -1) {
             col += color(r, world)
         }
         col /= Float(ns)
+        
         let ir = Int(255.99*col[0])
         let ig = Int(255.99*col[1])
         let ib = Int(255.99*col[2])
