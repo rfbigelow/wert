@@ -50,8 +50,8 @@ srand48(Date().hashValue)
 
 let world = [sphere(vec3(0.0, 0.0, -1.0), 0.5, lambertian(vec3(0.8, 0.3, 0.3))),
              sphere(vec3(0.0, -100.5, -1.0), 100, lambertian(vec3(0.8, 0.8, 0.0))),
-            sphere(vec3(1, 0, -1), 0.5, metal(vec3(0.8, 0.6, 0.2))),
-            sphere(vec3(-1, 0, -1), 0.5, metal(vec3(0.8, 0.8, 0.8)))]
+            sphere(vec3(1, 0, -1), 0.5, metal(vec3(0.8, 0.6, 0.2), 0.3)),
+            sphere(vec3(-1, 0, -1), 0.5, metal(vec3(0.8, 0.8, 0.8), 1.0))]
 let cam = camera()
 
 for j in stride(from: ny-1, through: 0, by: -1) {
