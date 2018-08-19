@@ -11,7 +11,7 @@ func reflect(_ v: vec3, _ n: vec3) -> vec3 {
 }
 
 class metal : material {
-    init(_ a: vec3, _ f: Float) {
+    init(_ a: vec3, _ f: Float = 0.0) {
         albedo = a
         fuzz = f
     }
