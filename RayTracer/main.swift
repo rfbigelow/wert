@@ -71,7 +71,11 @@ let world = [sphere(vec3(0.0, 0.0, -1.0), 0.5, lambertian(vec3(0.1, 0.2, 0.5))),
             sphere(vec3(1, 0, -1), 0.5, metal(vec3(0.8, 0.6, 0.2))),
             sphere(vec3(-1, 0, -1), 0.5, dielectric(1.5)),
             sphere(vec3(-1, 0, -1), -0.45, dielectric(1.5))]
-let cam = camera(vec3(-2, 2, 1), vec3(0, 0, -1), vec3(0, 1, 0), 45, Float(nx)/Float(ny))
+let lookfrom = vec3(3, 3, 2)
+let lookat = vec3(0, 0, -1)
+let dist_to_focus = (lookfrom - lookat).length
+let aperture = Float(2.0)
+let cam = camera(lookfrom, lookat, vec3(0, 1, 0), 20, aspect: Float(nx)/Float(ny), aperture: aperture, focus_dist: dist_to_focus)
 
 for j in stride(from: ny-1, through: 0, by: -1) {
     for i in 0..<nx {
@@ -79,7 +83,7 @@ for j in stride(from: ny-1, through: 0, by: -1) {
         for _ in 0..<ns {
             let u = (Float(i) + Float(drand48())) / Float(nx)
             let v = (Float(j) + Float(drand48())) / Float(ny)
-            let r = cam.get_ray(u: u, v: v)
+            let r = cam.get_ray(s: u, t: v)
             col += color(r, world, 0)
         }
         col /= Float(ns)
