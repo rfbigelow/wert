@@ -31,13 +31,14 @@ struct vec3 {
     var b: Float {
         return e[2]
     }
+    
     static prefix func + (vector: vec3) -> vec3 { return vector }
     static prefix func - (vector: vec3) -> vec3 {
         return vec3(-vector.e[0], -vector.e[1], -vector.e[2])
     }
-
+    
     subscript(index: Int) -> Float { return e[index] }
-
+    
     static func += (left: inout vec3, right: vec3) {
         left = left + right
     }

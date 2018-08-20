@@ -17,7 +17,6 @@ struct ray {
     var origin: vec3 { return A }
     var direction: vec3 { return B }
     func pointAtParameter(_ t:Float) -> vec3 { return A + t*B }
-    
     var A: vec3
     var B: vec3
 }

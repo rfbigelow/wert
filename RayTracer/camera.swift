@@ -8,14 +8,6 @@
 
 import Foundation
 
-func random_in_unit_disk() -> vec3 {
-    var p: vec3
-    repeat {
-        p = 2.0*vec3(Float(drand48()), Float(drand48()), 0) - vec3(1, 1, 0)
-    } while dot(p, p) >= 1.0
-    return p
-}
-
 struct camera {
     init(_ lookfrom: vec3, _ lookat: vec3, _ vup: vec3, _ vfov: Float, aspect: Float, aperture: Float, focus_dist: Float) {
         lens_radius = aperture / 2
@@ -34,8 +26,7 @@ struct camera {
         let rd = lens_radius*random_in_unit_disk()
         let offset = u * rd.x + v * rd.y
         return ray(origin + offset, lower_left_corner + s*horizontal + t*vertical - origin - offset)
-    }
-    
+    }  
     let lower_left_corner: vec3
     let horizontal: vec3
     let vertical: vec3

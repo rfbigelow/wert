@@ -16,6 +16,5 @@ class lambertian : material {
         attenuation = albedo
         return true
     }
-    
     let albedo: vec3
 }

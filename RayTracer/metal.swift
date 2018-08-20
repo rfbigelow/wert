@@ -6,10 +6,6 @@
 //  Copyright © 2018 Robert Bigelow. All rights reserved.
 //
 
-func reflect(_ v: vec3, _ n: vec3) -> vec3 {
-    return v - 2*dot(v,n)*n
-}
-
 class metal : material {
     init(_ a: vec3, _ f: Float = 0.0) {
         albedo = a

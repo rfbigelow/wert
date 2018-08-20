@@ -38,7 +38,6 @@ struct sphere : hitable {
         }
         return false
     }
-    
     let center: vec3
     let radius: Float
     let mat: material

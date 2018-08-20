@@ -47,6 +47,5 @@ class dielectric : material {
         }
         return true
     }
-    
     let ref_idx: Float
 }
