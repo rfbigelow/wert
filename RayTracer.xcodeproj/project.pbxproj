@@ -64,6 +64,7 @@
 		7D39DFCA209DF49D0038FA64 = {
 			isa = PBXGroup;
 			children = (
+				7DA913D4212B00930030A183 /* README.md */,
 				7D39DFD5209DF49D0038FA64 /* RayTracer */,
 				7D39DFD4209DF49D0038FA64 /* Products */,
 			);
@@ -92,7 +93,6 @@
 				7DBF31D52117824300F7EBA5 /* vec3.swift */,
 				7DF95A0D21194D1900BF28B1 /* hitablelist.swift */,
 				7DBF31D7211932B800F7EBA5 /* ray.swift */,
-				7DA913D4212B00930030A183 /* README.md */,
 			);
 			path = RayTracer;
 			sourceTree = "<group>";
