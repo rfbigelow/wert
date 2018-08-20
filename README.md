@@ -23,7 +23,7 @@ This type defines a ray with two points, `A` and `B`. `A` is the `origin` and `B
 
 This is the primary extension point for adding new geometric objects. Currently there is support for `sphere`s and lists of `hitable` things, though the list of things must be of the same concrete type right now.
 
-The protocol tests to see if a ray intersects with the geometry in a certain range, and produces a hit record. This record records the point on the geometry (`p`), where that point intersect along the ray (`t`), and the surface normal of the hit. It also contains an optional material reference. It returns `true` if a hit occurs, and `false` otherwise.
+The protocol tests to see if a ray intersects with the geometry in a certain range, and produces a hit record. This records the point on the geometry (`p`), where that point intersect along the ray (`t`), and the surface normal of the hit. It also contains an optional material reference. It returns `true` if a hit occurs, and `false` otherwise.
 
 ### The `material` Protocol
 
