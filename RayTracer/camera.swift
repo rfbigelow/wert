@@ -19,7 +19,7 @@ func random_in_unit_disk() -> vec3 {
 struct camera {
     init(_ lookfrom: vec3, _ lookat: vec3, _ vup: vec3, _ vfov: Float, aspect: Float, aperture: Float, focus_dist: Float) {
         lens_radius = aperture / 2
-        let theta = vfov*Float.pi/180.0
+        let theta = vfov*Float.pi/180
         let half_height = tan(theta/2)
         let half_width = aspect * half_height       
         origin = lookfrom

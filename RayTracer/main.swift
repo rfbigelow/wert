@@ -57,8 +57,34 @@ func color(_ r: ray, _ world: hitable, _ depth: Int) -> vec3 {
     }
 }
 
-let nx = 200
-let ny = 100
+func random_scene() -> [sphere] {
+    var scene = [sphere]()
+    scene.append(sphere(vec3(0, -1000, 0), 1000, lambertian(vec3(0.5, 0.5, 0.5))))
+    for a in -11..<11 {
+        for b in -11..<11 {
+            let choose_mat = Float(drand48())
+            let center = vec3(Float(a)+0.9*Float(drand48()), 0.2, Float(b)+0.9*Float(drand48()))
+            if (center - vec3(4, 0.2, 0)).length > 0.9 {
+                if choose_mat < 0.8 {
+                    scene.append(sphere(center, 0.2, lambertian(vec3(Float(drand48()*drand48()),Float(drand48()*drand48()),Float(drand48()*drand48())))))
+                }
+                else if choose_mat < 0.95 {
+                    scene.append(sphere(center, 0.2, metal(vec3(Float(0.5*(1 + drand48())), Float(0.5*(1 + drand48())), Float(0.5*(1 + drand48()))), Float(0.5*drand48()))))
+                }
+                else {
+                    scene.append(sphere(center, 0.2, dielectric(1.5)))
+                }
+            }
+        }
+    }
+    scene.append(sphere(vec3(0, 1, 0), 1.0, dielectric(1.5)))
+    scene.append(sphere(vec3(-4, 1, 0), 1.0, lambertian(vec3(0.4, 0.2, 0.1))))
+    scene.append(sphere(vec3(4, 1, 0), 1.0, metal(vec3(0.7, 0.6, 0.5))))
+    return scene
+}
+
+let nx = 1000
+let ny = 500
 let ns = 100
 
 print("P3\n\(nx) \(ny)\n255");
@@ -66,16 +92,12 @@ print("P3\n\(nx) \(ny)\n255");
 srand48(Date().hashValue)
 
 let R = Float(cos(Double.pi/4))
-let world = [sphere(vec3(0.0, 0.0, -1.0), 0.5, lambertian(vec3(0.1, 0.2, 0.5))),
-            sphere(vec3(0.0, -100.5, -1.0), 100, lambertian(vec3(0.8, 0.8, 0.0))),
-            sphere(vec3(1, 0, -1), 0.5, metal(vec3(0.8, 0.6, 0.2))),
-            sphere(vec3(-1, 0, -1), 0.5, dielectric(1.5)),
-            sphere(vec3(-1, 0, -1), -0.45, dielectric(1.5))]
-let lookfrom = vec3(3, 3, 2)
-let lookat = vec3(0, 0, -1)
+let world = random_scene()
+let lookfrom = vec3(9, 2, 2)
+let lookat = vec3(4, 1, 0)
 let dist_to_focus = (lookfrom - lookat).length
-let aperture = Float(2.0)
-let cam = camera(lookfrom, lookat, vec3(0, 1, 0), 20, aspect: Float(nx)/Float(ny), aperture: aperture, focus_dist: dist_to_focus)
+let aperture = Float(0.1)
+let cam = camera(lookfrom, lookat, vec3(0, 1, 0), 30, aspect: Float(nx)/Float(ny), aperture: aperture, focus_dist: dist_to_focus)
 
 for j in stride(from: ny-1, through: 0, by: -1) {
     for i in 0..<nx {
