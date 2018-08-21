@@ -1,6 +1,8 @@
 #  The Weekend Ray Tracer
 This ray tracer is based on the one featured in Peter Shirley's "Ray Tracing in a Weekend", which is a great introduction to this exciting field. I decided that it would be fun to learn Swift while following along in the book. The result is wert.
 
+![Sample Image](spheres.jpg)
+
 ## Design Decisions
 There weren't many decisions to make, but I'll document the major ones that I remember here before I forget them.
 

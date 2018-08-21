@@ -41,6 +41,7 @@
 		7D9126032128C7E4002F8420 /* metal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = metal.swift; sourceTree = "<group>"; };
 		7DA913D4212B00930030A183 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7DA913D5212B03190030A183 /* utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = utility.swift; sourceTree = "<group>"; };
+		7DA913D7212B8C650030A183 /* spheres.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = spheres.jpg; sourceTree = "<group>"; };
 		7DBF31D52117824300F7EBA5 /* vec3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vec3.swift; sourceTree = "<group>"; };
 		7DBF31D7211932B800F7EBA5 /* ray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ray.swift; sourceTree = "<group>"; };
 		7DF9251E2129EB3400D57507 /* dielectric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dielectric.swift; sourceTree = "<group>"; };
@@ -65,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				7DA913D4212B00930030A183 /* README.md */,
+				7DA913D7212B8C650030A183 /* spheres.jpg */,
 				7D39DFD5209DF49D0038FA64 /* RayTracer */,
 				7D39DFD4209DF49D0038FA64 /* Products */,
 			);
